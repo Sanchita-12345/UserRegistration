@@ -4,8 +4,8 @@ class UserRegistration{
 
 	public static void main(String args[])
 	{
-		Pattern pat = Pattern.compile("^[a-z0-9.]+@[a-z.]+$");
-		Matcher match = pat.matcher("abc.xyz@bl.co.in");
+		Pattern pat = Pattern.compile("^[1-9]{2}\\s[0-9]{10}$");
+		Matcher match = pat.matcher("91 9919819801");
 		boolean result = match.matches();
 		System.out.println(result);
 
