@@ -34,7 +34,7 @@ public class MultipleEntryForEmailTest {
 			boolean result = user.Email(email);
 			Assert.assertEquals(expectedResult, result);
 		} catch(MultipleEntryForEmailException e) {
-			System.out.println("Exception : " +e.getMessage());
+			System.out.println("Invalid Email");
 		}
 	}
 }
