@@ -19,38 +19,38 @@ public class UserRegistrationMain {
 	}
 
 	public boolean  getLastName(String last_name) {
-		Pattern pat = Pattern.compile(lastName);
+		Pattern pattern = Pattern.compile(lastName);
 		return pattern.matcher(last_name).matches();
 	}
 	
 	
 	public boolean  getEmail(String emailId) {
-		Pattern pat = Pattern.compile(email);
+		Pattern pattern = Pattern.compile(email);
 		return pattern.matcher(emailId).matches();
 	}
 	
 	public boolean  getMobileNumber(String ph_no) {
-		Pattern pat = Pattern.compile(phoneNumber);
+		Pattern pattern = Pattern.compile(phoneNumber);
 		return pattern.matcher(ph_no).matches();
 	}
 	
 	public boolean  getPasswordRuleOne(String password_one) {
-		Pattern pat = Pattern.compile(passwordOne);
+		Pattern pattern = Pattern.compile(passwordOne);
 		return pattern.matcher(password_one).matches();
 	}
 	
 	public boolean  getPasswordRuleTwo(String password_two) {
-		Pattern pat = Pattern.compile(passwordTwo);
+		Pattern pattern = Pattern.compile(passwordTwo);
 		return pattern.matcher(password_two).matches();
 	}
 	
 	public boolean  getPasswordRuleThree(String password_three) {
-		Pattern pat = Pattern.compile(passwordThree);
+		Pattern pattern = Pattern.compile(passwordThree);
 		return pattern.matcher(password_three).matches();
 	}
 	
 	public boolean  getPasswordRuleThree(String password_four) {
-		Pattern pat = Pattern.compile(passwordFour);
+		Pattern pattern = Pattern.compile(passwordFour);
 		return pattern.matcher(password_four).matches();
 	}
 }
