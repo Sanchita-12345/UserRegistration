@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class UserRegistrationTest {
 	
-UserRegistrationMain uc = new UserRegistrationMain();
+	UserRegistrationMain uc = new UserRegistrationMain();
 	
 	@Test
 	public void isFirstNameHappy() {
