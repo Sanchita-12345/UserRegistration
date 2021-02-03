@@ -2,8 +2,12 @@ package com.bridgelabz;
 
 import java.util.regex.Pattern;
 
-public class UserRegistrationMain {
+@FunctionalInterFace
+interface UserRegistrationDetails {
+	boolean check(String s);
+}
 
+public class UserRegistrationMain {
    	private static final String firstName = "^[A-Z]{1}[a-z]{2,}$";
    	private static final String lastName = "(^[A-Z]{1}[a-z]{2,})+\\s+([A-Z]{1}[a-z]{2,})*$";
    	private static final String email = "^[a-z0-9.]+@[a-z.]+$";
@@ -13,76 +17,13 @@ public class UserRegistrationMain {
    	private static final String passwordThree = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$";
    	private static final String passwordFour = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";
 	
-	public boolean getFirstName() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(firstName);
-			return pattern.matcher("sanchita").matches();
-		} catch(InvalidDException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-
-	public boolean getLastName() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(lastName);
-			return pattern.matcher("barik").matches();
-		} catch(InvalidDException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-	
-	
-	public boolean getEmail() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(email);
-			return pattern.matcher("sanchitabarik@40@gmail.com").matches();
-		}catch(InvalidDException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-	
-	public boolean getMobileNumber() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(phoneNumber);
-			return pattern.matcher("7844391").matches();
-		}catch(InvalidDException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-	
-	public boolean getPasswordRuleOne() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(passwordOne);
-			return pattern.matcher("san").matches();
-		}catch(InvalidException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-	
-	public boolean getPasswordRuleTwo() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(passwordTwo);
-			return pattern.matcher("sanchi").matches();
-		}catch(InvalidDException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-	
-	public boolean getPasswordRuleThree() throws InvalidUserDetailsException {
-			try {
-				Pattern pattern = Pattern.compile(passwordThree);
-				return pattern.matcher("sanchita").matches();
-			}catch(InvalidException e) {
-				throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
-	
-	public boolean getPasswordRuleFour() throws InvalidUserDetailsException {
-		try {
-			Pattern pattern = Pattern.compile(passwordFour);
-			return pattern.matcher("sanchita9876").matches();
-		}catch(InvalidException e) {
-			throw new InvalidUserDetailsException("Invalid input");
-		}
-	}
+   	//using Lambda Function
+   	UserRegistrationDetails getFirstName = (s) -> (Pattern.compile(firstName).matcher(s).matches());
+   	UserRegistrationDetails getLastName = (s) -> (Pattern.compile(lastName).matcher(s).matches());
+   	UserRegistrationDetails getEmail = (s) -> (Pattern.compile(email).matcher(s).matches());
+   	UserRegistrationDetails getMobileNumber = (s) -> (Pattern.compile(phoneNumber).matcher(s).matches());
+   	UserRegistrationDetails getPasswordRuleOne = (s) -> (Pattern.compile(passwordOne).matcher(s).matches());
+   	UserRegistrationDetails getPasswordRuleTwo = (s) -> (Pattern.compile(passwordTwo).matcher(s).matches());
+   	UserRegistrationDetails getPasswordRuleThree = (s) -> (Pattern.compile(passwordThree).matcher(s).matches());
+   	UserRegistrationDetails getPasswordRuleFour = (s) -> (Pattern.compile(passwordFour).matcher(s).matches());
 }

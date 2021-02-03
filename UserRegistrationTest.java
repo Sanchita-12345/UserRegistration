@@ -4,107 +4,123 @@ import org.junit.Test;
 
 public class UserRegistrationTest {
 	
-	UserRegistrationMain uc = new UserRegistrationMain();
+UserRegistrationMain uc = new UserRegistrationMain();
 	
 	@Test
-	public void isFirstNameHappy() {
+	public void isFirstNameValid() {
 		UserRegistrationMain uc = new UserRegistrationMain();
-		boolean result =uc.getFirstName("Sanchita");
+		boolean result = true;
+		result = uc.getFirstName.check("Sanchita");
 		Assert.assertTrue(result);
 	}
 	
 	@Test
-	public void isFirstNameSad() {
+	public void isFirstNameInvalid() {
 		UserRegistrationMain uc = new UserRegistrationMain();
-		boolean result =uc.getFirstName("sanchita");
+		boolean result = false;
+		result = uc.getFirstName.check("sanchita");
 		Assert.assertFalse(result);
 	}
 	
 	@Test
-	public void isLastNameHappy() {
+	public void isLastNameValid() {
 		UserRegistrationMain uc = new UserRegistrationMain();
-		boolean result =uc.getLastName("Barik");
+		boolean result = true;
+		result = uc.getLastName.check("Barik");
 		Assert.assertTrue(result);
 	}
 	
 	@Test
-	public void isLastNameSad() {
+	public void isLastNameInvalid() {
 		UserRegistrationMain uc = new UserRegistrationMain();
-		boolean result =uc.getLastName("barik");
+		boolean result = false;
+		result = uc.getLastName.check("barik");
 		Assert.assertFalse(result);
 	}
 	
 	@Test
-	public void isEmailHappy() {
+	public void isEmailValid() {
 		UserRegistrationMain uc = new UserRegistrationMain();
-		boolean result =uc.getEmail("sanchitabarik40@gmail.com");
+		boolean result = true;
+		result = uc.getEmail.check("sanchitabarik40@gmail.com");
 		Assert.assertTrue(result);
 	}
 	@Test
-	public void isEmailSad() {
+	public void isEmailInvalid() {
 		UserRegistrationMain uc = new UserRegistrationMain();
-		boolean result =uc.getEmail("sanchitabarik40gmail.com");
+		boolean result = false;
+		result = uc.getEmail.check("sanchitabarik40gmailcom");
 		Assert.assertFalse(result);
 	}
 
 	@Test
-    public void isMobileNumberHappy(){
+    public void isMobileNumberValid(){
 		UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getMobileNumber("91 9932675488");
+        boolean result = true;
+        result = uc.getMobileNumber.check("91 9932675488");
         Assert.assertTrue(result);
     }
     @Test
-    public void isMobileNumberSad(){
+    public void isMobileNumberInvalid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getMobileNumber("897678764");
+        boolean result = false; 
+        result = uc.getMobileNumber.check("897678764");
         Assert.assertFalse(result);
     }
     @Test
-    public void isPasswordRuleOneHappy(){
+    public void isPasswordRuleOneValid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleOne("sanchita");
+        boolean result = true;
+        result = uc.getPasswordRuleOne.check("sanchita");
         Assert.assertTrue(result);
     }
     @Test
-    public void isPasswordRuleOneSad(){
+    public void isPasswordRuleOneInvalid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleOne("abc");
+        boolean result = false;
+        result = uc.getPasswordRuleOne.check("abc");
         Assert.assertFalse(result);
     }
     @Test
-    public void isPasswordRuleTwoHappy(){
+    public void isPasswordRuleTwoValid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleTwo("Sanchita");
+        boolean result = true;
+        result = uc.getPasswordRuleTwo.check("Sanchita");
         Assert.assertTrue(result);
     }
     @Test
-    public void isPasswordRuleTwoSad(){
+    public void isPasswordRuleTwoInvalid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleTwo("sanchita");
+        boolean result = false;
+        result = uc.getPasswordRuleTwo.check("sanchita");
         Assert.assertFalse(result);
     }
     @Test
-    public void isPasswordRuleThreeHappy(){
+    public void isPasswordRuleThreeValid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result =uc.getPasswordRuleThree("Sanchita9876");
+        boolean result = true;
+        result = uc.getPasswordRuleThree.check("Sanchita9876");
         Assert.assertTrue(result);
     }
     @Test
-    public void ispasswordRuleThreeSad(){
+    public void ispasswordRuleThreeInvalid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleThree("Sanchita");
+        boolean result = false;
+        result = uc.getPasswordRuleThree.check("Sanchita");
         Assert.assertFalse(result);
     }
     @Test
-    public void isPasswordRuleFourHappy(){
+    public void isPasswordRuleFourValid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleFour("Sanchita#9876");
+        boolean result = true;
+        result = uc.getPasswordRuleFour.check("Sanchita#9876");
         Assert.assertTrue(result);
     }
     @Test
-    public void isPasswordRuleFourSad(){
+    public void isPasswordRuleFourInvalid(){
     	UserRegistrationMain uc = new UserRegistrationMain();
-        boolean result=uc.getPasswordRuleFour("sanchita7654");
+        boolean result = false;
+        result = uc.getPasswordRuleFour.check("sanchita7654");
         Assert.assertFalse(result);
     }
 }
